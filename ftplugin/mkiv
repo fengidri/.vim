@@ -1,0 +1,1 @@
+imap <c-t> \\starttyping\<cr>\<cr>\stoptyping\<up>
