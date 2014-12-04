@@ -15,7 +15,7 @@ filetype off                  " required!
 set rtp+=$HOME/.vim/bundle/YouCompleteMe
 set rtp+=$HOME/.vim/bundle/syntastic
 set rtp+=$HOME/.vim/bundle/EasyMotion
-set rtp+=$HOME/.vim/bundle/vim-powerline
+"set rtp+=$HOME/.vim/bundle/vim-powerline
 set rtp+=$HOME/.vim/bundle/mark
 set rtp+=$HOME/.vim/bundle/pyplugin
 
@@ -120,7 +120,7 @@ set wildmenu
 set wildignorecase
 set completeopt=menuone
 let ch_syntax_for_h=1
-"set statusline=[%<%t]%0*%h%m%r%=BufNr:%n\ ft:%{&ft}%{&fileencoding}%0*\ %-14.(%c%V%)\ %l/%L\ 
+set statusline=[%<%t]%0*%h%m%r%=BufNr:%n\ ft:%{&ft}%{&fileencoding}%0*\ %-14.(%c%V%)\ %l/%L\ 
 "}}}
 "key map{{{
 map <F1> <nop>
@@ -452,4 +452,3 @@ call matchadd("Ignore", "\r")
 
 "}}}
 "
-
