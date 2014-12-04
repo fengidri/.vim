@@ -1,0 +1,4 @@
+.vim
+====
+
+settting of vim
