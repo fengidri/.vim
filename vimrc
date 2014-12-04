@@ -1,58 +1,12 @@
-"{{{Bundle
 set nocompatible              " be iMproved
 filetype off                  " required!
 
-"set rtp+=~/.vim/bundle/vundle/
-"call vundle#rc()
-"
-"" let Vundle manage Vundle
-"" required! 
-"Bundle 'gmarik/vundle'
-"Bundle 'Valloric/YouCompleteMe'
-"Bundle 'scrooloose/syntastic'
-"Bundle 'EasyMotion'
-"Bundle 'https://github.com/Lokaltog/vim-powerline.git'
+"加载第三方的插件 
 set rtp+=$HOME/.vim/bundle/YouCompleteMe
 set rtp+=$HOME/.vim/bundle/syntastic
 set rtp+=$HOME/.vim/bundle/EasyMotion
-"set rtp+=$HOME/.vim/bundle/vim-powerline
 set rtp+=$HOME/.vim/bundle/mark
 set rtp+=$HOME/.vim/bundle/pyplugin
-
-" My bundles here:
-"Bundle 'scrooloose/nerdtree'
-"Bundle 'davidoc/taskpaper.vim'
-"Bundle 'Rip-Rip/clang_complete'
-"Bundle 'vasconcelloslf/vim-foldfocus'
-
-"Bundle 'matze/vim-tex-fold'
-
-"Bundle 'megaannum/forms'
-"Bundle 'vim-scripts/VFT--VIM-Form-Toolkit'
-"Bundle 'tomtom/vimform_vim'
-"Bundle 'VOoM'
-"Bundle 'taglist.vim'
-"Bundle 'python.vim'
-"Bundle 'juneedahamed/svnj.vim'
-
-"
-" original repos on GitHub
-"Bundle 'tpope/vim-fugitive'
-"Bundle 'Lokaltog/vim-easymotion'
-"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-"Bundle 'tpope/vim-rails.git'
-"Bundle 'Bdavidhalter/jedi-vim'
-"Bundle 'davidhalter/jedi-vim'
-"Bundle 'SirVer/ultisnips'
-"Bundle 'svn_line_history.vim'
-"Bundle 'terryma/vim-multiple-cursors'
-"Bundle 'kien/ctrlp.vim'
-"Bundle 'sjbach/lusty'
-"Bundle 'https://github.com/Lokaltog/vim-powerline.git'
-"Bundle 'git://git.wincent.com/command-t.git'
-"Bundle 'git://git.wincent.com/command-t.git'
-"Bundle 'file:///Users/gmarik/path/to/plugin'
-"}}}
 
 "set options{{{
 "set virtualedit=all
