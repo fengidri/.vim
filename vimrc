@@ -2,6 +2,9 @@ set nocompatible              " be iMproved
 filetype off                  " required!
 
 "加载第三方的插件 
+"为了可以与im 并存. 要修改autoload/youcompleteme.vim
+"s:InvokeCompletion, s:SetCompleteFunc
+"让这两个函数直接退出
 set rtp+=$HOME/.vim/bundle/YouCompleteMe
 set rtp+=$HOME/.vim/bundle/syntastic
 set rtp+=$HOME/.vim/bundle/EasyMotion
@@ -9,6 +12,7 @@ set rtp+=$HOME/.vim/bundle/mark
 set rtp+=$HOME/.vim/bundle/pyplugin
 
 "set options{{{
+"=================================================================
 "set virtualedit=all
 set t_Co=256
 set ambiwidth=double "设置宽度不明的文字(如 “”①②→ )为双宽度文本参考。
@@ -159,42 +163,8 @@ let NERDTreeIgnore=[
             \]
 "}}}"
 
-"Used by winmanager {{{
-let g:Explore_title = "[Explore]"
-function! Explore_Start() 
-    exe 'Explore'
-	wincmd p
-endfunction 
-function! Explore_IsValid() 
-return 1 
-endfunction
-let g:Project_title = "[Project]"
-function! Project_Start() 
-    exe 'Project'
-	wincmd p
-endfunction 
-function! Project_IsValid() 
-return 1 
-endfunction
-"
-let g:netrw_list_hide='^\.'
-
-let g:Tlist_File_Fold_Auto_Close=0
-let g:Tlist_Use_Right_Window=1
-let g:Tlist_Auto_Open=0
-let g:Tlist_Show_One_File=1
-
-let g:bufExplorerSortBy='number'     " Sort by the buffer's number.
-let g:bufExplorerDefaultHelp=0       " Do not show default help.
-"}}}
 "对于zsh的一些标记,conqueterm不能识别.下面的设置使其正常显示,但还有一些区别
 let g:ConqueTerm_TERM= 'xterm'
-"let g:ConqueTerm_FastMode=1
-
-"minibuferexplorer
-"let g:miniBufExplorerMoreThanOne=2
-"let g:miniBufExplSplitBelow=0
-"let g:miniBufExplSplitToEdge = 1
 hi MBEVisibleNormal guifg=red 
 "colorscheme torte
 "colorscheme slate
@@ -247,71 +217,11 @@ let g:netrw_menu=1
 hi MBEVisibleNormal guifg=red 
 
 "}}}
-"menu{{{
-
-function! DNW2()
-python << EOF
-import os
-import re
-import datetime
-f0=os.popen('make')
-lines=f0.readlines()
-f0.close()
-last_new=r'make: “(.*)”是最新的。'
-target=''
-for l in lines:
-	match=re.search(last_new,l)
-	if match:
-		target=match.group(1)
-if target=='':
-	print "no target"
-	f0=os.popen('make')
-	lines=f0.readlines()
-	f0.close()
-	for l in lines:
-		match=re.search(last_new,l)
-		print l
-		if match:
-			print "os"
-			target=match.group(1)
-if target!='':
-	#	f0=os.popen("echo 'password'|sudo -S  dnw2  " + target)
-	#	print f0.read()
-	#	f0.close()
-	timestamp=os.path.getmtime(target)
-	filetime=datetime.datetime.fromtimestamp(timestamp)
-	now=datetime.datetime.now()
-
-	print "mtime is %ss" %(now -filetime ).seconds
-	vim.command('let target="%s"' % target)
-else:
-	vim.command("cope 5")
-
-EOF
-if  exists('target')
-	if target!=''
-		exec "silent !xterm -e 'sudo dnw2 " .target .";sleep 10'"
-	endif
-endif
-endfunction
-
-
-
-
-15menu Feng(&P).CodeInfoNew		    :Codeinfoopen	<cr>
-15menu Feng(&P).CodeInfoUpdate		:Codeinfowrite<cr>	
-
-
-"}}}
-"{{{ options of plugin
 
 filetype plugin indent on     " required!
-"autocmd{{{
-"PathExpFind
 autocmd BufEnter * highlight  Index ctermfg=green
 autocmd BufLeave * update
 
-"}}}
 "
 "
 "syntax
@@ -319,25 +229,9 @@ autocmd BufLeave * update
 let mapleader="`"
 "go to the position of last
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
-let g:Powerline_symbols = 'unicode'
-
-
-
 
 let t_Co=256
-let g:Powerline_symbols='unicode'
-
-
-
-
-
-"{{{ jedi "this is a bug of jedi"
-let g:jedi#popup_select_first = 0
-let g:jedi#auto_vim_configuration = 0
-let g:jedi#use_tabs_not_buffers = 0
-let g:jedi#use_splits_not_buffers = "left"
-let g:jedi#completions_command = ""
-"}}}
+let g:Powerline_symbols = 'unicode'
 
 let Tlist_Enable_Fold_Column = 0
 let g:EasyMotion_leader_key = 'f'
@@ -350,18 +244,18 @@ set efm=%Dmake\[%\\d%\\+\]:\ Entering\ directory\ '%f',
 
 "YCM{{{
 let g:ycm_complete_in_strings = 0
-
 let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_global_ycm_extra_conf = '/home/feng/Dropbox/ycm_extra_conf.py'
 let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_key_invoke_completion = '<C-c>'
 "set imactivatekey=C-space
-"}}}
-
-
-
 "now the youcompleteme is still weak for python
+let g:ycm_server_use_vim_stdout = 0
+let g:ycm_filetype_whitelist = { '*': 1}
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_key_list_select_completion = ['<Down>']
+let g:ycm_echo_current_diagnostic = 1
 let g:ycm_filetype_blacklist = {
       \ 'tagbar'   : 1,
       \ 'qf'       : 1,
@@ -373,19 +267,14 @@ let g:ycm_filetype_blacklist = {
       \ 'vim'  : 1,
       \ 'context'  : 1,
       \}
-let g:ycm_server_use_vim_stdout = 0
-let g:ycm_filetype_whitelist = { '*': 1}
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_key_list_select_completion = ['<Down>']
-let g:ycm_echo_current_diagnostic = 1
+"}}}
 
-"{{{syntastic
+"syntastic{{{
 let g:syntastic_echo_current_error=1
 let g:syntastic_ignore_files=[".*\.c$", '.*\.cpp$', '.*\.html$']
 let g:syntastic_python_checkers = ['pyflakes']
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
-
 let g:syntastic_filetype_map = {"json": "javascript" }
 "}}}
 
@@ -398,11 +287,3 @@ let g:SimpleJsIndenter_BriefMode = 1
 "隐藏^M"
 call matchadd("Ignore", "\r")
 
-
-
-
-
-
-
-"}}}
-"
