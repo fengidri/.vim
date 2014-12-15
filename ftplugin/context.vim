@@ -10,7 +10,7 @@ noremap <M-1> <esc>0i\section{<esc>$a}<left><esc>
 noremap <M-2> <esc>0i\subsection{<esc>$a}<left><esc>
 noremap <M-3> <esc>0i\subsubsection{<esc>$a}<left><esc>
 
-map <F2>    :WikiPost<cr>
+map <F2>    :update<cr>:WikiPost<cr>
 
 set textwidth=9999999999999
 set colorcolumn=0
