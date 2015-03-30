@@ -35,7 +35,7 @@ set guicursor=i:ver13-blinkon0,n-v-c:block-blinkon0 "光标
 "set guifont=Monaco\ 10
 "set guifont=DejaVu\ Sans\ Mono\ 12
 "set guifont=Monaco\ Bold\ 12
-set guifont=Inconsolata\ Medium\ 14
+set guifont=Inconsolata\ Medium\ 13
 
 set guioptions-=T
 set guioptions-=m
@@ -246,7 +246,7 @@ set efm=%Dmake\[%\\d%\\+\]:\ Entering\ directory\ '%f',
 let g:ycm_complete_in_strings = 0
 let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_global_ycm_extra_conf = '/home/feng/Dropbox/ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py"
 let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_key_invoke_completion = '<C-c>'
 "set imactivatekey=C-space

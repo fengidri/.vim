@@ -10,6 +10,7 @@ syn match PATHS_TITLE           #^>>>[a-zA-Z0-9_ -.]\+#
 syntax match Index "<|>.*$" conceal cchar=\  
 
 syn match PATHS_EXPFileTypePy   #.\+\.py\>#
+syn match PATHS_EXPFileTypeLua   #.\+\.lua\>#
 syn match PATHS_EXPFileTypeSh   #.\+\.mk\>#
 syn match PATHS_EXPFileTypeSh   #.\+\.sh\>#
 syn match PATHS_EXPFileTypeC    #.\+\.c\>#
@@ -105,6 +106,7 @@ hi def link PATHS_EXPFileTypeJS Statement
 hi def link PATHS_EXPFileTypeHtml Type 
 hi def link PATHS_EXPFileTypeC Identifier
 hi def link PATHS_EXPFileTypePy Function 
+hi def link PATHS_EXPFileTypeLua  Question 
 hi def link PATHS_EXPFileTypeSh Tag 
 hi def link PATHS_EXPFileTypeH Tag 
 hi def link  Folded Normal
