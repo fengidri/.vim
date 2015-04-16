@@ -1,7 +1,7 @@
 set nocompatible              " be iMproved
 filetype off                  " required!
 
-"加载第三方的插件 
+"加载第三方的插件
 "为了可以与im 并存. 要修改autoload/youcompleteme.vim
 "s:InvokeCompletion, s:SetCompleteFunc
 "让这两个函数直接退出
@@ -57,9 +57,9 @@ set laststatus=2
 set autoindent
 set expandtab
 set textwidth=80
-set colorcolumn=81 
+set colorcolumn=81
 
-"set clipboard =unnamed 
+"set clipboard =unnamed
 set foldmethod=marker
 set tags=tags;
 "set cursorline
@@ -78,7 +78,7 @@ set wildmenu
 set wildignorecase
 set completeopt=menuone
 let ch_syntax_for_h=1
-set statusline=[%<%t]%0*%h%m%r%=BufNr:%n\ ft:%{&ft}%{&fileencoding}%0*\ %-14.(%c%V%)\ %l/%L\ 
+set statusline=[%<%t]%0*%h%m%r%=BufNr:%n\ ft:%{&ft}%{&fileencoding}%0*\ %-14.(%c%V%)\ %l/%L\
 "}}}
 "key map{{{
 map <F1> <nop>
@@ -117,7 +117,7 @@ filetype plugin indent on
 "highlight iCursor guifg=white guibg=steelblue
 
 " mark
-let g:mwDefaultHighlightingPalette = 'extended' 
+let g:mwDefaultHighlightingPalette = 'extended'
 "用于从底端,忽略几个组
 "feng
 let g:IgnoreGrougeNum = 1
@@ -165,7 +165,7 @@ let NERDTreeIgnore=[
 
 "对于zsh的一些标记,conqueterm不能识别.下面的设置使其正常显示,但还有一些区别
 let g:ConqueTerm_TERM= 'xterm'
-hi MBEVisibleNormal guifg=red 
+hi MBEVisibleNormal guifg=red
 "colorscheme torte
 "colorscheme slate
 "colorscheme mime
@@ -176,8 +176,8 @@ hi MBEVisibleNormal guifg=red
 "colorscheme default
 "colorscheme desert
 colorscheme feng
-"colorscheme lucius 
-"LuciusBlack 
+"colorscheme lucius
+"LuciusBlack
 "LuciusDarkHighContrast
 "LuciusBlackLowContrast
 "杂项{{{
@@ -192,7 +192,7 @@ au BufNewFile,BufRead *.tex setf context
 
 	
 "let g:winManagerAutoOpen=1
-"let g:winManagerWidth=30    " the width of the explorer areas. 
+"let g:winManagerWidth=30    " the width of the explorer areas.
 "
 "let g:winManagerWindowLayout='TagList|Explore,BufExplorer'
 let g:winManagerWindowLayout='TagList|NERDTree'
@@ -214,13 +214,14 @@ let g:netrw_menu=1
 "let g:miniBufExplorerMoreThanOne=2
 "let g:miniBufExplSplitBelow=0
 "let g:miniBufExplSplitToEdge = 0
-hi MBEVisibleNormal guifg=red 
+hi MBEVisibleNormal guifg=red
 
 "}}}
 
 filetype plugin indent on     " required!
 autocmd BufEnter * highlight  Index ctermfg=green
 autocmd BufLeave * update
+autocmd BufWrite *  let t = getcurpos()|silent! %s/ \+$//|call setpos('.', t)
 
 "
 "
