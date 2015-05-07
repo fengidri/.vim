@@ -9,7 +9,7 @@ set rtp+=$HOME/.vim/bundle/YouCompleteMe
 set rtp+=$HOME/.vim/bundle/syntastic
 set rtp+=$HOME/.vim/bundle/EasyMotion
 set rtp+=$HOME/.vim/bundle/mark
-set rtp+=$HOME/.vim/bundle/pyplugin
+set rtp+=$HOME/.vim/bundle/wind
 
 "set options{{{
 "=================================================================
