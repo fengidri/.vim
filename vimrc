@@ -5,11 +5,16 @@ filetype off                  " required!
 "为了可以与im 并存. 要修改autoload/youcompleteme.vim
 "s:InvokeCompletion, s:SetCompleteFunc
 "让这两个函数直接退出
-set rtp+=$HOME/.vim/bundle/YouCompleteMe
-set rtp+=$HOME/.vim/bundle/syntastic
-set rtp+=$HOME/.vim/bundle/EasyMotion
-set rtp+=$HOME/.vim/bundle/mark
-set rtp+=$HOME/.vim/bundle/wind
+let lst = split(globpath($HOME . "/.vim/bundle", '*/'), '\n')
+for d in lst
+    execute "set rtp+=" . d
+endfor
+"set rtp+=$HOME/.vim/bundle/YouCompleteMe
+"set rtp+=$HOME/.vim/bundle/syntastic
+"set rtp+=$HOME/.vim/bundle/EasyMotion
+"set rtp+=$HOME/.vim/bundle/mark
+"set rtp+=$HOME/.vim/bundle/wind
+"set rtp+=$HOME/.vim/bundle/ctrlp.vim
 
 "set options{{{
 "=================================================================
