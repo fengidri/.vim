@@ -77,7 +77,7 @@ set switchbuf=useopen
 set foldminlines=9
 set incsearch
 "set ignorecase
-set backupdir=~/.cache/backup
+"set backupdir=~/.cache/backup
 set wildmode=full
 set wildmenu
 set wildignorecase
