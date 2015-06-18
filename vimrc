@@ -108,7 +108,7 @@ map ; :
 vnoremap p "0p
 vnoremap <c-c>    "+y
 imap <C-Q> <C-x><C-k>
-vnoremap / ""y/<C-R>0<CR>
+
 map <c-n> :cn<cr>
 imap <c-n> <esc>:cn<cr>
 noremap [[ [[zz
@@ -252,7 +252,7 @@ set efm=%Dmake\[%\\d%\\+\]:\ Entering\ directory\ '%f',
 let g:ycm_complete_in_strings = 0
 let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py"
+let g:ycm_global_ycm_extra_conf = $HOME . "/.vim/ycm_extra_conf.py"
 let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_key_invoke_completion = '<C-c>'
 "set imactivatekey=C-space
