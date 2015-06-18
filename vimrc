@@ -1,20 +1,11 @@
 set nocompatible              " be iMproved
 filetype off                  " required!
 
-"加载第三方的插件
-"为了可以与im 并存. 要修改autoload/youcompleteme.vim
-"s:InvokeCompletion, s:SetCompleteFunc
-"让这两个函数直接退出
+
 let lst = split(globpath($HOME . "/.vim/bundle", '*/'), '\n')
 for d in lst
     execute "set rtp+=" . d
 endfor
-"set rtp+=$HOME/.vim/bundle/YouCompleteMe
-"set rtp+=$HOME/.vim/bundle/syntastic
-"set rtp+=$HOME/.vim/bundle/EasyMotion
-"set rtp+=$HOME/.vim/bundle/mark
-"set rtp+=$HOME/.vim/bundle/wind
-"set rtp+=$HOME/.vim/bundle/ctrlp.vim
 
 "set options{{{
 "=================================================================
@@ -262,6 +253,7 @@ let g:ycm_filetype_whitelist = { '*': 1}
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_key_list_select_completion = ['<Down>']
 let g:ycm_echo_current_diagnostic = 1
+let g:ycm_extra_conf_vim_data = ['&filetype', 'g:frain_include_dirs']
 let g:ycm_filetype_blacklist = {
       \ 'tagbar'   : 1,
       \ 'qf'       : 1,

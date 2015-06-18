@@ -19,6 +19,7 @@
 
 import os
 import ycm_core
+import sys
 
 # These are the compilation flags that will be used in case there's no
 # compilation database set (by default, one is not set).
@@ -27,6 +28,7 @@ flags = [
     '-Wall',
     '-Wextra',
     '-Werror',
+    '-Wno-unused-parameter',
     '-fexceptions',
     '-DNDEBUG',
     # THIS IS IMPORTANT! Without a "-std=<something>" flag, clang won't know which
@@ -34,26 +36,25 @@ flags = [
     # headers will be compiled as C headers. You don't want that so ALWAYS specify
     # a "-std=<something>".
     # For a C project, you would set this to something like 'c99' instead of
-    # 'c++11'.
-    '-std=c++11',
-    # ...and the same thing goes for the magic -x option which specifies the
-    # language that the files to be compiled are written in. This is mostly
-    # relevant for c++ headers.
-    # For a C project, you would set this to 'c' instead of 'c++'.
-    '-x',
-    'c++',
-    #'-Qunused-arguments',
-    #'-Wextra  -Wunused-but-set-parameter',
-    '-Wno-unused-parameter',
-    '-isystem',
-    '/usr/include',
-    '-isystem',
-    '/usr/local/include',
-    '-isystem',
-    '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1',
-    '-isystem',
-    '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include',
 ]
+
+more_flags = {
+   'c': [ '-std=c99', '-x', 'c' ],
+   'cpp': [ '-std=c++11', '-x', 'c++' ],
+   'linux': [
+       '-isystem', '/usr/include',
+       '-isystem', '/usr/local/include',
+       ],
+   'mac':[
+       '-isystem',
+       '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1',
+       '-isystem',
+       '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include',
+       ],
+   }
+
+if sys.platform.startswith('linux'):
+    flags += more_flags['linux']
 
 
 # Set this to the absolute path to the folder (NOT the file!) containing the
@@ -143,6 +144,21 @@ def FlagsForFile( filename, **kwargs ):
   else:
     relative_to = DirectoryOfThisScript()
     final_flags = MakeRelativePathsInFlagsAbsolute( flags, relative_to )
+
+  client_data = kwargs.get('client_data')
+  if client_data:
+      ft = client_data.get('&filetype')
+      t = more_flags.get(ft)
+      if t:
+          final_flags += t
+
+      include_dirs = client_data.get('g:frain_include_dirs')
+      for d in include_dirs:
+          final_flags.insert(0, d)
+          final_flags.insert(0, '-isystem')
+
+
+
 
   return {
     'flags': final_flags,
