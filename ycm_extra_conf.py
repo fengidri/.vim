@@ -20,6 +20,7 @@
 import os
 import ycm_core
 import sys
+import json
 
 # These are the compilation flags that will be used in case there's no
 # compilation database set (by default, one is not set).
@@ -128,6 +129,27 @@ def GetCompilationInfoForFile( filename ):
   return database.GetCompilationInfoForFile( filename )
 
 
+def FlagsFromFrain(flags, filename, frain_data):
+    if not frain_data:
+        return
+
+    ft = frain_data.get('&filetype')
+    t = more_flags.get(ft)
+    if t:
+        flags += t
+
+    include_dirs = frain_data.get('g:frain_include_dirs')
+    if not include_dirs:
+        return
+    include_dirs = json.loads(include_dirs)
+    for root, incs in include_dirs.items():
+        if not filename.startswith(root):
+            continue
+
+        for d in incs:
+            flags.insert(0, d)
+            flags.insert(0, '-isystem')
+
 # This is the entry point; this function is called by ycmd to produce flags for
 # a file.
 def FlagsForFile( filename, **kwargs ):
@@ -145,20 +167,7 @@ def FlagsForFile( filename, **kwargs ):
     relative_to = DirectoryOfThisScript()
     final_flags = MakeRelativePathsInFlagsAbsolute( flags, relative_to )
 
-  client_data = kwargs.get('client_data')
-  if client_data:
-      ft = client_data.get('&filetype')
-      t = more_flags.get(ft)
-      if t:
-          final_flags += t
-
-      include_dirs = client_data.get('g:frain_include_dirs')
-      for d in include_dirs:
-          final_flags.insert(0, d)
-          final_flags.insert(0, '-isystem')
-
-
-
+  FlagsFromFrain(final_flags, filename, kwargs.get('client_data'))
 
   return {
     'flags': final_flags,
