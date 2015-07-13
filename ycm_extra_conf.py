@@ -40,7 +40,7 @@ flags = [
 ]
 
 more_flags = {
-   'c': [ '-std=c99', '-x', 'c' ],
+   'c': [ '-x', 'c' ],
    'cpp': [ '-std=c++11', '-x', 'c++' ],
    'linux': [
        '-isystem', '/usr/include',
