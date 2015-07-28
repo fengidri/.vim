@@ -8,8 +8,9 @@ vimrc
 ======
 就是.vimrc. 只不过是放在这个位置了.
 
-bundles
+bundle
 =====
 * https://github.com/scrooloose/syntastic.git
 * https://github.com/Valloric/YouCompleteMe.git
 * https://github.com/fengidri/wind
+
