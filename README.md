@@ -6,8 +6,7 @@ vim 的个人的相关配置.
 
 install
 ====
-cd ~;git clone ......
-ln -s .vim/vimrc .vimrc
+cd ~;git clone URL; ln -s .vim/vimrc .vimrc
 
 
 
