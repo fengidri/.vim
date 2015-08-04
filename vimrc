@@ -237,3 +237,11 @@ let g:SimpleJsIndenter_BriefMode = 1
 "隐藏^M"
 call matchadd("Ignore", "\r")
 
+let g:wind_author            = "丁雪峰"
+let g:wind_email             = "fengidri@yeah.net"
+
+let g:wind_wiki_server       = "blog.fengidri.me"
+let g:wind_wiki_index        = "http://%s/store/index.json"
+let g:wind_wiki_chapter      = 'http://%s/store/%s/index.mkiv'
+let g:wind_wiki_api_chapter  = 'http://%s/fwikiapi/chapters/%s'
+let g:wind_wiki_api_chapters = "http://%s/fwikiapi/chapters"
