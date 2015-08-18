@@ -91,8 +91,6 @@ map wf :6 wincmd w<cr>
 noremap <space> <C-f>
 noremap <S-space> <C-b>
 map <C-tab>  :update<cr>:bnext<cr>
-map gt  :GoAny<cr>
-map gf  :GoFile<cr>
 map gn  :update<cr>:bnext<cr>
 map gp  :update<cr>:bprevious<cr>
 map ; :
@@ -130,7 +128,9 @@ hi MBEVisibleNormal guifg=red
 "colorscheme darkblue
 "colorscheme default
 "colorscheme desert
-colorscheme feng
+"colorscheme feng
+"colorscheme seoul256
+colorscheme monokai
 "colorscheme lucius
 "LuciusBlack
 "LuciusDarkHighContrast
@@ -198,7 +198,7 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_global_ycm_extra_conf = $HOME . "/.vim/ycm_extra_conf.py"
 let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_key_invoke_completion = '<C-c>'
-set imactivatekey=C-space
+"set imactivatekey=C-space
 "now the youcompleteme is still weak for python
 let g:ycm_server_use_vim_stdout = 0
 let g:ycm_filetype_whitelist = { '*': 1}
@@ -232,6 +232,7 @@ let g:syntastic_filetype_map = {"json": "javascript" }
 
 let g:SimpleJsIndenter_BriefMode = 1
 
+"set shell=zsh\ -i
 
 "hi SpecialKey ctermfg=15 guifg=bg guibg=bg
 "隐藏^M"
