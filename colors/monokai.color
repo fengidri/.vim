@@ -1,0 +1,110 @@
+" Vim color file
+" Converted from Textmate theme Monokai using Coloration v0.3.2 (http://github.com/sickill/coloration)
+
+set background=dark
+highlight clear
+
+if exists("syntax_on")
+  syntax reset
+endif
+
+set t_Co=256
+let g:colors_name = "monokai_c"
+
+"> Cursor                       #272822 #f8f8f0 NONE
+"> Visual                       NONE    #49483e NONE
+"> CursorLine                   NONE    #3c3d37 NONE
+"> CursorColumn                 NONE    #3c3d37 NONE
+"> ColorColumn                  NONE    #3c3d37 NONE
+"> LineNr                       #90908a #3c3d37 NONE
+"> VertSplit                    #64645e #64645e NONE
+"> MatchParen                   #f92672 NONE    underline
+"> StatusLine                   #f8f8f2 #64645e bold
+"> StatusLineNC                 #f8f8f2 #64645e NONE
+"> Pmenu                        NONE    #545454 NONE
+"> PmenuSel                     #000000 #ffffff NONE
+"> IncSearch                    #272822 #e6db74 NONE
+"> Search                       NONE    NONE    underline
+"> Directory                    #ae81ff NONE    NONE
+"> Folded                       #75715e #272822 NONE
+"> SignColumn                   NONE    #3c3d37 NONE
+"> Normal                       #f8f8f2 #272822 NONE
+"> Boolean                      #ae81ff NONE    NONE
+"> Character                    #ae81ff NONE    NONE
+"> Comment                      #75715e NONE    NONE
+"> Conditional                  #f92672 NONE    NONE
+"> Constant                     NONE    NONE    NONE
+"> Define                       #f92672 NONE    NONE
+"> DiffAdd                      #f8f8f2 #46830c bold
+"> DiffDelete                   #8b0807 NONE    NONE
+"> DiffChange                   #f8f8f2 #243955 NONE
+"> DiffText                     #f8f8f2 #204a87 bold
+"> ErrorMsg                     #f8f8f0 #f92672 NONE
+"> WarningMsg                   #f8f8f0 #f92672 NONE
+"> Float                        #ae81ff NONE    NONE
+"> Function                     #5fcbdf NONE    bold
+"> Identifier                   #66d9ef NONE    italic
+"> Keyword                      #f92672 NONE    NONE
+"> Label                        #e6db74 NONE    NONE
+"> NonText                      #49483e #31322c NONE
+"> Number                       #ae81ff NONE    NONE
+"> Operator                     #f92672 NONE    NONE
+"> PreProc                      #f92672 NONE    NONE
+"> Special                      #f8f8f2 NONE    NONE
+"> SpecialKey                   #49483e #3c3d37 NONE
+"> Statement                    #f92672 NONE    bold
+"> StorageClass                 #66d9ef NONE    italic
+"> String                       #e6db74 NONE    NONE
+"> Tag                          #f92672 NONE    NONE
+"> Title                        #f8f8f2 NONE    bold
+"> Todo                         #75715e NONE    inverse,bold
+"> Type                         #f92672 NONE    bold
+"> Underlined                   NONE    NONE    underline
+">
+"> rubyClass                    #f92672 NONE    NONE
+"> rubyFunction                 #a6e22e NONE    NONE
+"> rubyInterpolationDelimiter   NONE    NONE    NONE
+"> rubySymbol                   #ae81ff NONE    NONE
+"> rubyConstant                 #66d9ef NONE    italic
+"> rubyStringDelimiter          #e6db74 NONE    NONE
+"> rubyBlockParameter           #fd971f NONE    italic
+"> rubyInstanceVariable         NONE    NONE    NONE
+"> rubyInclude                  #f92672 NONE    NONE
+"> rubyGlobalVariable           NONE    NONE    NONE
+"> rubyRegexp                   #e6db74 NONE    NONE
+"> rubyRegexpDelimiter          #e6db74 NONE    NONE
+"> rubyEscape                   #ae81ff NONE    NONE
+"> rubyControl                  #f92672 NONE    NONE
+"> rubyClassVariable            NONE    NONE    NONE
+"> rubyOperator                 #f92672 NONE    NONE
+"> rubyException                #f92672 NONE    NONE
+"> rubyPseudoVariable           NONE    NONE    NONE
+"> rubyRailsUserClass           #66d9ef NONE    italic
+"> rubyRailsARAssociationMethod #66d9ef NONE    NONE
+"> rubyRailsARMethod            #66d9ef NONE    NONE
+"> rubyRailsRenderMethod        #66d9ef NONE    NONE
+"> rubyRailsMethod              #66d9ef NONE    NONE
+"> erubyDelimiter               NONE    NONE    NONE
+"> erubyComment                 #75715e NONE    NONE
+"> erubyRailsMethod             #66d9ef NONE    NONE
+"> htmlTag                      NONE    NONE    NONE
+"> htmlEndTag                   #a6e22e NONE    NONE
+"> htmlTagName                  NONE    NONE    NONE
+"> htmlArg                      NONE    NONE    NONE
+"> htmlSpecialChar              #ae81ff NONE    NONE
+"> javaScriptFunction           #66d9ef NONE    italic
+"> javaScriptRailsFunction      #66d9ef NONE    NONE
+"> javaScriptBraces             NONE    NONE    NONE
+"> yamlKey                      #f92672 NONE    NONE
+"> yamlAnchor                   NONE    NONE    NONE
+"> yamlAlias                    NONE    NONE    NONE
+"> yamlDocumentHeader           #e6db74 NONE    NONE
+"> cssURL                       #fd971f NONE    italic
+"> cssFunctionName              #66d9ef NONE    NONE
+"> cssColor                     #ae81ff NONE    NONE
+"> cssPseudoClassId             #a6e22e NONE    NONE
+"> cssClassName                 #a6e22e NONE    NONE
+"> cssValueLength               #ae81ff NONE    NONE
+"> cssCommonAttr                #66d9ef NONE    NONE
+"> cssBraces                    NONE    NONE    NONE
+

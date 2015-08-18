@@ -363,21 +363,51 @@ RGB2SHORT_DICT, SHORT2RGB_DICT = _create_dicts()
 
 #---------------------------------------------------------------------
 
-if __name__ == '__main__':
-    import doctest
-    doctest.testmod()
-    if len(sys.argv) == 1:
-        print_all()
-        raise SystemExit
-    arg = sys.argv[1]
-    if len(arg) < 4 and int(arg) < 256:
-        rgb = short2rgb(arg)
-        sys.stdout.write('xterm color \033[38;5;%sm%s\033[0m -> RGB exact \033[38;5;%sm%s\033[0m' % (arg, arg, arg, rgb))
-        sys.stdout.write("\033[0m\n")
-    else:
-        short, rgb = rgb2short(arg)
-        sys.stdout.write('RGB %s -> xterm color approx \033[38;5;%sm%s (%s)' % (arg, short, short, rgb))
-        sys.stdout.write("\033[0m\n")
-if __name__ == "__main__":
-    pass
+def color(c):
+    if c == 'NONE':
+        return c, c
+    s, h = rgb2short(c[1:])
+    return (s, c)
 
+def main(i, o=sys.stdout):
+    fmt = "hi {name} ctermfg={ctermfg} ctermbg={ctermbg} cterm={cterm}" \
+            " guifg={guifg} guibg={guibg} gui={gui}\n"
+    for line in open(i).readlines():
+        o.write(line)
+        if not line.startswith('">'):
+            continue
+        tt = line.split()
+        if len(tt) == 1:
+            continue
+        if len(tt) != 5:
+            print "Error format: %s" % line
+            continue
+
+        name  = tt[1]
+        ctermfg, guifg = color(tt[2])
+        ctermbg, guibg = color(tt[3])
+        cterm = gui = tt[4]
+        o.write(fmt.format(name=name,
+            ctermfg=ctermfg, ctermbg=ctermbg, cterm=cterm,
+            guifg=guifg, guibg=guibg, gui=gui))
+
+
+main("colors/monokai.color")
+
+if __name__ == '__main__':
+    pass
+#    import doctest
+#    doctest.testmod()
+#    if len(sys.argv) == 1:
+#        print_all()
+#        raise SystemExit
+#    arg = sys.argv[1]
+#    if len(arg) < 4 and int(arg) < 256:
+#        rgb = short2rgb(arg)
+#        sys.stdout.write('xterm color \033[38;5;%sm%s\033[0m -> RGB exact \033[38;5;%sm%s\033[0m' % (arg, arg, arg, rgb))
+#        sys.stdout.write("\033[0m\n")
+#    else:
+#        short, rgb = rgb2short(arg)
+#        sys.stdout.write('RGB %s -> xterm color approx \033[38;5;%sm%s (%s)' % (arg, short, short, rgb))
+#        sys.stdout.write("\033[0m\n")
+#
