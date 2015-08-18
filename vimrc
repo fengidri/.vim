@@ -130,7 +130,7 @@ hi MBEVisibleNormal guifg=red
 "colorscheme desert
 "colorscheme feng
 "colorscheme seoul256
-colorscheme monokai
+colorscheme monokai_c
 "colorscheme lucius
 "LuciusBlack
 "LuciusDarkHighContrast

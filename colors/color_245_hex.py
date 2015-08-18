@@ -392,7 +392,7 @@ def main(i, o=sys.stdout):
             guifg=guifg, guibg=guibg, gui=gui))
 
 
-main("colors/monokai.color")
+main("monokai.color")
 
 if __name__ == '__main__':
     pass

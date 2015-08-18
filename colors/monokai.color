@@ -50,7 +50,7 @@ let g:colors_name = "monokai_c"
 "> Number                       #ae81ff NONE    NONE
 "> Operator                     #f92672 NONE    NONE
 "> PreProc                      #f92672 NONE    NONE
-"> Special                      #f8f8f2 NONE    NONE
+"> Special                      #268783 NONE    NONE
 "> SpecialKey                   #49483e #3c3d37 NONE
 "> Statement                    #f92672 NONE    bold
 "> StorageClass                 #66d9ef NONE    italic
