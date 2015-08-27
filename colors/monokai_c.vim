@@ -37,8 +37,8 @@ hi Pmenu ctermfg=NONE ctermbg=59 cterm=NONE guifg=NONE guibg=#545454 gui=NONE
 hi PmenuSel ctermfg=16 ctermbg=231 cterm=NONE guifg=#000000 guibg=#ffffff gui=NONE
 "> IncSearch                    #272822 #e6db74 NONE
 hi IncSearch ctermfg=16 ctermbg=186 cterm=NONE guifg=#272822 guibg=#e6db74 gui=NONE
-"> Search                       NONE    NONE    underline
-hi Search ctermfg=NONE ctermbg=NONE cterm=underline guifg=NONE guibg=NONE gui=underline
+"> Search                       #272822 #e6db74 NONE
+hi Search ctermfg=16 ctermbg=186 cterm=NONE guifg=#272822 guibg=#e6db74 gui=NONE
 "> Directory                    #ae81ff NONE    NONE
 hi Directory ctermfg=141 ctermbg=NONE cterm=NONE guifg=#ae81ff guibg=NONE gui=NONE
 "> Folded                       #75715e #272822 NONE

@@ -24,7 +24,7 @@ let g:colors_name = "monokai_c"
 "> Pmenu                        NONE    #545454 NONE
 "> PmenuSel                     #000000 #ffffff NONE
 "> IncSearch                    #272822 #e6db74 NONE
-"> Search                       NONE    NONE    underline
+"> Search                       #272822 #e6db74 NONE
 "> Directory                    #ae81ff NONE    NONE
 "> Folded                       #75715e #272822 NONE
 "> SignColumn                   NONE    #3c3d37 NONE
