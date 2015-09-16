@@ -392,22 +392,23 @@ def main(i, o=sys.stdout):
             guifg=guifg, guibg=guibg, gui=gui))
 
 
-main("monokai.color")
+#main("monokai.color")
 
 if __name__ == '__main__':
     pass
-#    import doctest
-#    doctest.testmod()
-#    if len(sys.argv) == 1:
-#        print_all()
-#        raise SystemExit
-#    arg = sys.argv[1]
-#    if len(arg) < 4 and int(arg) < 256:
-#        rgb = short2rgb(arg)
-#        sys.stdout.write('xterm color \033[38;5;%sm%s\033[0m -> RGB exact \033[38;5;%sm%s\033[0m' % (arg, arg, arg, rgb))
-#        sys.stdout.write("\033[0m\n")
-#    else:
-#        short, rgb = rgb2short(arg)
-#        sys.stdout.write('RGB %s -> xterm color approx \033[38;5;%sm%s (%s)' % (arg, short, short, rgb))
-#        sys.stdout.write("\033[0m\n")
-#
+    import doctest
+    doctest.testmod()
+    if len(sys.argv) == 1:
+        print_all()
+        raise SystemExit
+    args = sys.argv[1:]
+    for arg in args:
+        if len(arg) < 4 and int(arg) < 256:
+            rgb = short2rgb(arg)
+            sys.stdout.write('xterm color \033[38;5;%sm%s\033[0m -> RGB exact \033[38;5;%sm%s\033[0m' % (arg, arg, arg, rgb))
+            sys.stdout.write("\033[0m\n")
+        else:
+            short, rgb = rgb2short(arg)
+            sys.stdout.write('RGB %s -> xterm color approx \033[38;5;%sm%s (%s)' % (arg, short, short, rgb))
+            sys.stdout.write("\033[0m\n")
+

@@ -39,7 +39,11 @@ set guioptions-=l
 set guioptions-=r
 set pumheight=17
 "
-set mouse=a
+
+if has("gui_running")
+    set mouse=a
+endif
+
 "set lines=26 columns=90
 "set lines=38 columns=155
 set ts=4
@@ -119,6 +123,11 @@ let g:IgnoreGrougeNum = 1
 "对于zsh的一些标记,conqueterm不能识别.下面的设置使其正常显示,但还有一些区别
 let g:ConqueTerm_TERM= 'xterm'
 hi MBEVisibleNormal guifg=red
+
+let g:solarized_termcolors=256
+set background=dark
+"colorscheme solarized
+
 "colorscheme torte
 "colorscheme slate
 "colorscheme mime
@@ -128,9 +137,9 @@ hi MBEVisibleNormal guifg=red
 "colorscheme darkblue
 "colorscheme default
 "colorscheme desert
-"colorscheme feng
+colorscheme feng
 "colorscheme seoul256
-colorscheme monokai_c
+"colorscheme monokai_c
 "colorscheme lucius
 "LuciusBlack
 "LuciusDarkHighContrast
@@ -232,6 +241,11 @@ let g:syntastic_filetype_map = {"json": "javascript" }
 
 let g:SimpleJsIndenter_BriefMode = 1
 
+
+"item2"
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
 "set shell=zsh\ -i
 
 "hi SpecialKey ctermfg=15 guifg=bg guibg=bg
@@ -246,3 +260,7 @@ let g:wind_wiki_index        = "http://%s/store/index.json"
 let g:wind_wiki_chapter      = 'http://%s/store/%s/index.mkiv'
 let g:wind_wiki_api_chapter  = 'http://%s/fwikiapi/chapters/%s'
 let g:wind_wiki_api_chapters = "http://%s/fwikiapi/chapters"
+
+
+
+
