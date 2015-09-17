@@ -33,7 +33,7 @@ hi Label        guifg=#FF0D00 gui=bold,underline ctermfg=196
 hi Typedef      guifg=#804040 gui=bold           ctermfg=95
 hi Type         guifg=#5fcbdf gui=bold           ctermfg=80
 hi LineNr       guibg=#d0ccca ctermfg=188
-hi CursorLine   guibg=#ACFFA1 guifg=black        ctermfg=157   ctermbg=255 cterm=None
+hi CursorLine   guibg=#ACFFA1 guifg=black        ctermfg=57   ctermbg=255 cterm=reverse
 hi VertSplit    guifg=#5e7079 guibg=#5e7079      ctermfg=60
 hi StatusLineNC guifg=#5e7079 ctermfg=60
 hi StatusLine   guifg=#899595 ctermfg=102
@@ -47,6 +47,7 @@ hi ColorColumn  guifg=white   guibg=grey
 hi MatchParen   gui=underline guifg=#ffffff      guibg=#242520
 
 hi Visual       term=reverse  cterm=reverse      gui=reverse
+hi PreProc      ctermfg=70
 
 exec "hi FoldColumn guifg=white  guibg=". default_color
 hi Folded  guifg=blue gui=italic

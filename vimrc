@@ -40,9 +40,7 @@ set guioptions-=r
 set pumheight=17
 "
 
-if has("gui_running")
-    set mouse=a
-endif
+set mouse=a
 
 "set lines=26 columns=90
 "set lines=38 columns=155
