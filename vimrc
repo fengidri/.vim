@@ -240,16 +240,22 @@ let g:syntastic_filetype_map = {"json": "javascript" }
 let g:SimpleJsIndenter_BriefMode = 1
 
 
-"item2"
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+"iterm2"
+if &term  =~ '^iterm2'
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
 
-"set shell=zsh\ -i
+"xterm"
+if &term  =~ '^xterm'
+    let &t_SI = "\<Esc>[6 q"
+    let &t_SR = "\<Esc>[4 q"
+    let &t_EI = "\<Esc>[2 q"
+end
 
-"hi SpecialKey ctermfg=15 guifg=bg guibg=bg
-"隐藏^M"
-call matchadd("Ignore", "\r")
+call matchadd("Ignore", "\r") "隐藏^M"
 
+"config"
 let g:wind_author            = "丁雪峰"
 let g:wind_email             = "fengidri@yeah.net"
 

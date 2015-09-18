@@ -36,7 +36,7 @@ hi CursorLine   guibg=#ACFFA1 guifg=black        ctermfg=57   ctermbg=255 cterm=
 hi VertSplit    guifg=#5e7079 guibg=#5e7079      ctermfg=60
 hi StatusLineNC guifg=#5e7079 ctermfg=60
 hi StatusLine   guifg=#899595 ctermfg=102
-hi LineNr       guibg=#242520 guifg=grey         ctermfg=246
+hi LineNr       guibg=#242520 guifg=grey         ctermfg=24
 hi Conceal      guibg=#242520 ctermfg=16
 hi Pmenu        guibg=grey    guifg=white
 hi PmenuSel     guibg=#97d681 guifg=black
