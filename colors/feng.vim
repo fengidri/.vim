@@ -15,10 +15,8 @@ let t_Co=256
 "Sublime
 let default_color="#242520"
 
-"exec "hi Comment		guifg=#009999  gui=bold 	"
-
-hi Normal       gui=bold      guifg=#ffffff      guibg=#242520 ctermfg=255 ctermbg=236
-hi Comment      guifg=#1e7079 ctermfg=39
+hi Normal       guifg=#ffffff guibg=#242520      ctermfg=255
+hi Comment      guifg=#1e7079 ctermfg=60
 hi String       guifg=#d7cc6c gui=bold           ctermfg=185
 hi constant     guifg=#a278ee ctermfg=141
 hi conditional  guifg=#df2367 gui=bold           cterm=bold    ctermfg=161
@@ -32,20 +30,23 @@ hi operator     guifg=#FF0D00 ctermfg=196
 hi Label        guifg=#FF0D00 gui=bold,underline ctermfg=196
 hi Typedef      guifg=#804040 gui=bold           ctermfg=95
 hi Type         guifg=#5fcbdf gui=bold           ctermfg=80
-hi CursorLine   guibg=#ACFFA1 guifg=black        ctermfg=57   ctermbg=255 cterm=reverse
+hi CursorLine   guibg=#ACFFA1 guifg=black        ctermfg=57    ctermbg=255 cterm=reverse
 hi VertSplit    guifg=#5e7079 guibg=#5e7079      ctermfg=60
 hi StatusLineNC guifg=#5e7079 ctermfg=60
 hi StatusLine   guifg=#899595 ctermfg=102
-hi LineNr       guibg=#242520 guifg=grey         ctermfg=24
+hi LineNr       guibg=#242520 guifg=grey         ctermfg=16    ctermbg=0
 hi Conceal      guibg=#242520 ctermfg=16
 hi Pmenu        guibg=grey    guifg=white
 hi PmenuSel     guibg=#97d681 guifg=black
 hi NonText      gui=bold      guifg=grey
-hi Search       guifg=black   guibg=grey
-hi ColorColumn  guifg=white   guibg=grey
+hi Search       guifg=black   guibg=grey         ctermfg=0
+
+hi ColorColumn  guifg=white   guibg=grey         ctermbg=233
 hi MatchParen   gui=underline guifg=#ffffff      guibg=#242520
 hi Statement    cterm=bold ctermfg=167 gui=bold guifg=Brown
 hi Visual       term=reverse  cterm=reverse      gui=reverse
+
+hi SpellBad term=reverse cterm=undercurl,reverse ctermbg=241 gui=undercurl guisp=Red
 
 exec "hi FoldColumn guifg=white  guibg=". default_color
 hi Folded  guifg=blue gui=italic
