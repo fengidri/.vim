@@ -40,7 +40,7 @@ set guioptions-=r
 set pumheight=17
 "
 
-set mouse=a
+set mouse=
 
 "set lines=26 columns=90
 "set lines=38 columns=155
@@ -76,7 +76,8 @@ set wildmenu
 set wildignorecase
 set completeopt=menuone
 let ch_syntax_for_h=1
-set statusline=[%<%t]%0*%h%m%r%=BN:%n\ ft:%{&ft}\ %{&fileencoding}%0*\ %-14.(%c%V%)\ %l/%L
+let g:wind_im_wubi=1
+set statusline=[%<%t]%0*%h%m%r%=Wubi:%{g:wind_im_wubi}\ BN:%n\ ft:%{&ft}\ %{&fileencoding}%0*\ %-14.(%c%V%)\ %l/%L
 "}}}
 "key map{{{
 map <F1> <nop>
@@ -124,7 +125,7 @@ hi MBEVisibleNormal guifg=red
 
 let g:solarized_termcolors=256
 set background=dark
-"colorscheme solarized
+colorscheme solarized
 
 "colorscheme torte
 "colorscheme slate
@@ -135,7 +136,7 @@ set background=dark
 "colorscheme darkblue
 "colorscheme default
 "colorscheme desert
-colorscheme feng
+"colorscheme feng
 "colorscheme seoul256
 "colorscheme monokai_c
 "colorscheme lucius
@@ -239,19 +240,18 @@ let g:syntastic_filetype_map = {"json": "javascript" }
 
 let g:SimpleJsIndenter_BriefMode = 1
 
-
-"iterm2"
-if &term  =~ '^iterm2'
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-endif
-
 "xterm"
 if &term  =~ '^xterm'
     let &t_SI = "\<Esc>[6 q"
-    let &t_SR = "\<Esc>[4 q"
     let &t_EI = "\<Esc>[2 q"
+"    let &t_SR = "\<Esc>[4 q"
 end
+
+"iterm2"
+if $ITERM_PROFILE  != ''
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
 
 call matchadd("Ignore", "\r") "隐藏^M"
 
