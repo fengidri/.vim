@@ -7,9 +7,6 @@ for d in lst
     execute "set rtp+=" . d
 endfor
 
-source .vim/ftplugin/man.vim
-nmap K :Man 2 <cword><cr>
-
 "set options{{{
 "=================================================================
 "set virtualedit=all
