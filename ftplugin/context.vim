@@ -1,9 +1,16 @@
 inoremap <C-t> <esc>0i\starttyping<cr>\stoptyping<esc>k$a<cr>
 inoremap <C-l> <esc>0i\startitemize<cr>\item <cr>\stopitemize<esc>k$a
 
+inoremap TY <esc>0i\starttyping<cr>\stoptyping<esc>k$a<cr>
+inoremap IT <esc>0i\startitemize<cr>\item <cr>\stopitemize<esc>k$a
+
 inoremap <M-1> <esc>0i\section{<esc>$a}<left>
 inoremap <M-2> <esc>0i\subsection{<esc>$a}<left>
 inoremap <M-3> <esc>0i\subsubsection{<esc>$a}<left>
+
+inoremap ST <esc>0i\section{<esc>$a}<left>
+inoremap SST <esc>0i\subsection{<esc>$a}<left>
+inoremap SSST <esc>0i\subsubsection{<esc>$a}<left>
 
 noremap <C-t> <esc>0i\starttyping<esc>/^\s*$<cr>i\stoptyping<cr><esc>
 noremap <C-l> <esc>0i\startitemize<esc><cr>0i<esc><C-v>/^\s*$<cr>kI\item  <esc>/^\s*$<cr>0i\stopitemize<cr><esc>
