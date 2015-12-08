@@ -253,6 +253,13 @@ if $ITERM_PROFILE  != ''
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
+"tmux"
+if exists('$TMUX')
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\e[6 q\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\e[2 q\<Esc>\\"
+endif
+
+
 call matchadd("Ignore", "\r") "隐藏^M"
 
 "config"
