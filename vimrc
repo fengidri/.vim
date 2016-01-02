@@ -76,8 +76,10 @@ set wildmenu
 set wildignorecase
 set completeopt=menuone
 let ch_syntax_for_h=1
+
 let g:wind_im_wubi=1
-set statusline=[%<%t]%0*%h%m%r%=Wubi:%{g:wind_im_wubi}\ BN:%n\ ft:%{&ft}\ %{&fileencoding}%0*\ %-14.(%c%V%)\ %l/%L
+let g:wind_zoom='z'
+set statusline=[%<%t]%0*%h%m%r%=Wubi:%{g:wind_im_wubi}\ BN:%n\ ft:%{&ft}\ %{&fileencoding}\ %{g:wind_zoom}\ %0*\ %-14.(%c%V%)\ %l/%L
 "}}}
 "key map{{{
 map <F1> <nop>
@@ -273,5 +275,7 @@ let g:wind_wiki_api_chapter  = 'http://%s/fwikiapi/chapters/%s'
 let g:wind_wiki_api_chapters = "http://%s/fwikiapi/chapters"
 
 
+"not show table line
+set showtabline=0
 
 
