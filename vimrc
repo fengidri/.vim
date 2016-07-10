@@ -127,7 +127,7 @@ hi MBEVisibleNormal guifg=red
 
 let g:solarized_termcolors=256
 set background=dark
-colorscheme solarized
+""colorscheme solarized
 
 "colorscheme torte
 "colorscheme slate
@@ -136,9 +136,9 @@ colorscheme solarized
 "colorscheme torte
 "colorscheme greens
 "colorscheme darkblue
-"colorscheme default
+colorscheme default
 "colorscheme desert
-"colorscheme feng
+""colorscheme feng
 "colorscheme seoul256
 "colorscheme monokai_c
 "colorscheme lucius
