@@ -136,9 +136,13 @@ set background=dark
 "colorscheme torte
 "colorscheme greens
 "colorscheme darkblue
-colorscheme default
 "colorscheme desert
-""colorscheme feng
+
+if has("gui_running")
+    colorscheme feng
+else
+    colorscheme default
+endif
 "colorscheme seoul256
 "colorscheme monokai_c
 "colorscheme lucius
