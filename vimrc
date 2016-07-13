@@ -127,7 +127,6 @@ hi MBEVisibleNormal guifg=red
 
 let g:solarized_termcolors=256
 set background=dark
-""colorscheme solarized
 
 "colorscheme torte
 "colorscheme slate
@@ -138,11 +137,12 @@ set background=dark
 "colorscheme darkblue
 "colorscheme desert
 
-if has("gui_running")
-    colorscheme feng
-else
-    colorscheme default
-endif
+colorscheme solarized
+""if has("gui_running")
+""    colorscheme feng
+""else
+""    colorscheme default
+""endif
 "colorscheme seoul256
 "colorscheme monokai_c
 "colorscheme lucius
