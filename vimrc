@@ -126,6 +126,7 @@ let g:ConqueTerm_TERM= 'xterm'
 hi MBEVisibleNormal guifg=red
 
 let g:solarized_termcolors=256
+let g:solarized_termtrans=1
 set background=dark
 
 "colorscheme torte
