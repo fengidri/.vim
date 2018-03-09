@@ -45,8 +45,8 @@ function! Tex_complier()
 		endif
 	endif
 	let texname=expand("%:p")
-"	exe '!xetex -halt-on-error ' . texname 
-"	exe '!xelatex -halt-on-error ' . texname 
+"	exe '!xetex -halt-on-error ' . texname
+"	exe '!xelatex -halt-on-error ' . texname
 	exe '!context ' . texname
 	if v:shell_error == "0"
 		let g:pdfname=expand("%:p:r") .".pdf"
@@ -68,16 +68,16 @@ function! Tex_complier()
 endfunction
 "}}}
 "设置快捷键{{{
-call IMAP ('$$', '$$ <++>', "context")
-call IMAP ('()', '()', "context")
-call IMAP ('[]', '[<++> ]', "context")
-call IMAP ('{}', '{ <++> }<++>', "context")
-call IMAP ('item`', "\\startitemize\<cr>\\item <++>\<cr>\\stopitemize\<cr><++>", "context")
-call IMAP ('table`', "\\starttable\<cr>\\NC<++>		\\VL<++>	\\AR\<cr>\\stoptable\<cr><++>", "context")
-call IMAP ('typing`', "\\starttyping\<cr><++>\<cr>\\stoptyping\<cr><++>", "context")
-call IMAP ("TPI", "		\\starttyping\<cr><++>\<cr>\\stoptyping\<cr><++>", "context")
-call IMAP ('code`', "\\startcode\<cr><++>\<cr>\\stopcode\<cr><++>", "context")
-call IMAP ('virbatim`', "\\startvirbatim\<cr><++>\<cr>\\stopvirbatim\<cr><++>", "context")
+""//call IMAP ('$$', '$$ <++>', "context")
+""//call IMAP ('()', '()', "context")
+""//call IMAP ('[]', '[<++> ]', "context")
+""//call IMAP ('{}', '{ <++> }<++>', "context")
+""//call IMAP ('item`', "\\startitemize\<cr>\\item <++>\<cr>\\stopitemize\<cr><++>", "context")
+""//call IMAP ('table`', "\\starttable\<cr>\\NC<++>		\\VL<++>	\\AR\<cr>\\stoptable\<cr><++>", "context")
+""//call IMAP ('typing`', "\\starttyping\<cr><++>\<cr>\\stoptyping\<cr><++>", "context")
+""//call IMAP ("TPI", "		\\starttyping\<cr><++>\<cr>\\stoptyping\<cr><++>", "context")
+""//call IMAP ('code`', "\\startcode\<cr><++>\<cr>\\stopcode\<cr><++>", "context")
+""//call IMAP ('virbatim`', "\\startvirbatim\<cr><++>\<cr>\\stopvirbatim\<cr><++>", "context")
 map ] i}<esc>
 "}}}
 "其它{{{
@@ -194,47 +194,6 @@ endfunction
 "endfunction
 "call Init_place_sign()
 ""}}}
-
-
-setlocal foldmethod=marker
-"set foldexpr=Ffold_expr(v:lnum)
-"function! Ffold_expr(lnum)
-"	let line= getline(a:lnum)
-"	let next= getline(a:lnum +1)
-"python<<EOF
-"import vim
-"line=vim.eval("line")
-"next=vim.eval("line")
-"print line
-"if next =~'\\section'
-"	vim.command("let re=1")
-"if line =~'\\section'
-"	vim.command("let re=1")
-"if next =~'\\subsection'
-"	vim.command("let re=2")
-"if line =~'\\subsection'
-"	vim.command("let re=2")
-"if next =~'\\subsubsection'
-"	vim.command("let re=3")
-"if line =~'\\subsubsection'
-"	vim.command("let re=3")
-"	#if line =~'{{{')
-"	#   return foldlevel(a:lnum-1) + 1
-"	#if line =~'}}}')
-"	#	return '<' . foldlevel(a:lnum-1) 
-"re=1
-"vim.command('let re="%s"'% re)
-"
-"EOF
-"return re
-"endfunction
 syn on
-"syn region section_Fold start=/\s*\\\(sub\)*section/ end=/\s*\\\(sub\)*section/me=s-1 transparent fold
-syn region section_Fold start=/\\section/ end=/\\section/me=s-1 transparent fold
-syn region subsection_Fold start=/\s*\\subsection/ end=/\s*\\\(sub\)\?section/me=s-1 transparent fold
-syn region subsubsection_Fold start=/\s*\\subsubsection/ end=/\s*\\\(sub\)*section/me=s-1 transparent fold
-syn region typing_Fold start=/\\starttyping/ end=/\\stoptyping/  fold
-"syn region typing_Fold start=/\\startitemize/ end=/\\stopitemize/ transparent fold
-syn region item_Fold start=/\\item/ end=/\s*\\\(item\|stopitemize\)/me=s-1 transparent fold
-syn region marker_Fold start=/{{{/ end=/}}}/ transparent fold
-set foldmethod=syntax
+
+imap . 。
