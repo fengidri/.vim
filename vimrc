@@ -44,8 +44,8 @@ set mouse=
 
 "set lines=26 columns=90
 "set lines=38 columns=155
-set ts=4
-set sts=4
+set tabstop=4
+set softtabstop=4
 set sw=4
 set shellslash
 set grepprg=grep\ -nh\ $*
@@ -138,11 +138,11 @@ set background=dark
 "colorscheme darkblue
 "colorscheme desert
 
-colorscheme solarized
+"colorscheme solarized
 ""if has("gui_running")
 ""    colorscheme feng
 ""else
-""    colorscheme default
+colorscheme default
 ""endif
 "colorscheme seoul256
 "colorscheme monokai_c
@@ -309,3 +309,6 @@ set showtabline=0
 ""
 ""inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 "TODO This make switch insert mode to normal slow"
+
+" https://vi.stackexchange.com/questions/2162/why-doesnt-the-backspace-key-work-in-insert-mode
+set backspace=indent,eol,start
