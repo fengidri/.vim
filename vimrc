@@ -40,7 +40,7 @@ set guioptions-=r
 set pumheight=17
 "
 
-set mouse=
+set mouse=a
 
 "set lines=26 columns=90
 "set lines=38 columns=155
@@ -83,16 +83,41 @@ set statusline=[%<%t]%0*%h%m%r%=Wubi:%{g:wind_im_wubi}\ BN:%n\ ft:%{&ft}\ %{&fil
 "}}}
 "key map{{{
 map <F1> <nop>
-map wj <C-w>j
-map wh <C-w>h
-map wl <C-w>l
-map wk <C-w>k
-map wa :1 wincmd w<cr>
-map wb :2 wincmd w<cr>
-map wc :3 wincmd w<cr>
-map wd :4 wincmd w<cr>
-map we :5 wincmd w<cr>
-map wf :6 wincmd w<cr>
+
+function WinJump(k)
+    let nr = winnr()
+    exec "wincmd " . a:k
+
+    let nnr = winnr()
+    if nr != nnr
+        return
+    endif
+
+
+    if !has_key(environ(), 'TMUX')
+        return
+    endif
+
+    if 'j'== a:k
+        let cmd ='tmux select-pane -D'
+    endif
+    if 'k'== a:k
+        let cmd ='tmux select-pane -U'
+    endif
+    if 'h'== a:k
+        let cmd ='tmux select-pane -L'
+    endif
+    if 'l'== a:k
+        let cmd ='tmux select-pane -R'
+    endif
+    call system(cmd)
+endfunction
+
+map wj :call WinJump('j')<cr>
+map wh :call WinJump('h')<cr>
+map wk :call WinJump('k')<cr>
+map wl :call WinJump('l')<cr>
+
 noremap <space> <C-f>
 noremap <S-space> <C-b>
 map <C-tab>  :update<cr>:bnext<cr>
@@ -207,6 +232,7 @@ set efm=%Dmake\[%\\d%\\+\]:\ Entering\ directory\ '%f',
             \%DGrep\ Entering\ directory\ '%f'
 
 "YCM{{{
+let g:ycm_auto_trigger=0
 let g:ycm_complete_in_strings = 0
 let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
@@ -231,6 +257,7 @@ let g:ycm_filetype_blacklist = {
       \ 'vimwiki'  : 1,
       \ 'vim'  : 1,
       \ 'context'  : 1,
+      \ 'frainuiSearch'  : 1,
       \}
 "}}}
 
