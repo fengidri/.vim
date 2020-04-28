@@ -113,10 +113,31 @@ function WinJump(k)
     call system(cmd)
 endfunction
 
-map wj :call WinJump('j')<cr>
-map wh :call WinJump('h')<cr>
-map wk :call WinJump('k')<cr>
-map wl :call WinJump('l')<cr>
+""map <silent> wj :call WinJump('j')<cr>
+""map <silent> wh :call WinJump('h')<cr>
+""map <silent> wk :call WinJump('k')<cr>
+""map <silent> wl :call WinJump('l')<cr>
+"set the M-j M-h M-k M-l"
+"item2 set the option as ESC+
+"tmux.conf as:
+""bind -n M-k run-shell 'tmux-vim-select-pane -U'
+""bind -n M-j run-shell 'tmux-vim-select-pane -D'
+""bind -n M-h run-shell 'tmux-vim-select-pane -L'
+""bind -n M-l run-shell 'tmux-vim-select-pane -R'
+"" when can set the comand in iterm2 as
+"" command + h  0x1b 0x68
+"" command + j  0x1b 0x6a
+"" command + k  0x1b 0x6b
+"" command + l  0x1b 0x6c
+""
+set <M-j>=j
+set <M-h>=h
+set <M-k>=k
+set <M-l>=l
+map <silent> <M-j> :call WinJump('j')<cr>
+map <silent> <M-h> :call WinJump('h')<cr>
+map <silent> <M-k> :call WinJump('k')<cr>
+map <silent> <M-l> :call WinJump('l')<cr>
 
 noremap <space> <C-f>
 noremap <S-space> <C-b>
@@ -163,11 +184,10 @@ set background=dark
 "colorscheme darkblue
 "colorscheme desert
 
-"colorscheme solarized
 ""if has("gui_running")
 ""    colorscheme feng
 ""else
-colorscheme default
+""colorscheme default
 ""endif
 "colorscheme seoul256
 "colorscheme monokai_c
@@ -293,6 +313,10 @@ if exists('$TMUX')
     let &t_EI = "\<Esc>Ptmux;\<Esc>\e[2 q\<Esc>\\"
 endif
 
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+set termguicolors
+colorscheme solarized8
 
 call matchadd("Ignore", "\r") "隐藏^M"
 
@@ -337,5 +361,12 @@ set showtabline=0
 ""inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 "TODO This make switch insert mode to normal slow"
 
+
 " https://vi.stackexchange.com/questions/2162/why-doesnt-the-backspace-key-work-in-insert-mode
 set backspace=indent,eol,start
+
+
+"关闭括号高亮"
+""NoMatchParen
+hi MatchParen term=underline cterm=underline ctermfg=6 ctermbg=NONE gui=underline guifg=NONE guibg=NONE
+
