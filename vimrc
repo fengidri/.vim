@@ -55,7 +55,6 @@ set laststatus=2
 set autoindent
 set expandtab
 set textwidth=80
-set colorcolumn=81
 
 "set clipboard =unnamed
 set foldmethod=marker
@@ -148,6 +147,7 @@ map ; :
 vnoremap p "0p
 vnoremap <c-c>    "+y
 imap <C-Q> <C-x><C-k>
+vmap q <esc>
 
 map <c-n> :cn<cr>
 imap <c-n> <esc>:cn<cr>
@@ -173,9 +173,9 @@ hi MBEVisibleNormal guifg=red
 
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
-set background=dark
+set background=light
 
-"colorscheme torte
+colorscheme gruvbox
 "colorscheme slate
 "colorscheme mime
 "colorscheme shine
@@ -369,4 +369,4 @@ set backspace=indent,eol,start
 "关闭括号高亮"
 ""NoMatchParen
 hi MatchParen term=underline cterm=underline ctermfg=6 ctermbg=NONE gui=underline guifg=NONE guibg=NONE
-
+hi ColorColumn  term=NONE cterm=NONE ctermfg=6 ctermbg=NONE gui=NONE guifg=NONE guibg=#b9b8ba
