@@ -171,30 +171,6 @@ let g:IgnoreGrougeNum = 1
 let g:ConqueTerm_TERM= 'xterm'
 hi MBEVisibleNormal guifg=red
 
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
-set background=light
-
-colorscheme gruvbox
-"colorscheme slate
-"colorscheme mime
-"colorscheme shine
-"colorscheme torte
-"colorscheme greens
-"colorscheme darkblue
-"colorscheme desert
-
-""if has("gui_running")
-""    colorscheme feng
-""else
-""colorscheme default
-""endif
-"colorscheme seoul256
-"colorscheme monokai_c
-"colorscheme lucius
-"LuciusBlack
-"LuciusDarkHighContrast
-"LuciusBlackLowContrast
 "杂项{{{
 "cscope
 set cscopequickfix=s-,c-,d-,i-,t-,e-
@@ -316,7 +292,6 @@ endif
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
-colorscheme solarized8
 
 call matchadd("Ignore", "\r") "隐藏^M"
 
@@ -366,7 +341,33 @@ set showtabline=0
 set backspace=indent,eol,start
 
 
+
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+set background=light
+
+colorscheme feng
+""colorscheme gruvbox
 "关闭括号高亮"
 ""NoMatchParen
 hi MatchParen term=underline cterm=underline ctermfg=6 ctermbg=NONE gui=underline guifg=NONE guibg=NONE
 hi ColorColumn  term=NONE cterm=NONE ctermfg=6 ctermbg=NONE gui=NONE guifg=NONE guibg=#b9b8ba
+"colorscheme slate
+"colorscheme mime
+"colorscheme shine
+"colorscheme torte
+"colorscheme greens
+"colorscheme darkblue
+"colorscheme desert
+
+""if has("gui_running")
+""    colorscheme feng
+""else
+""colorscheme default
+""endif
+"colorscheme seoul256
+"colorscheme monokai_c
+"colorscheme lucius
+"LuciusBlack
+"LuciusDarkHighContrast
+"LuciusBlackLowContrast
