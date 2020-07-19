@@ -32,7 +32,7 @@ hi operator     guifg=#FF0D00 ctermfg=196
 hi Label        guifg=#FF0D00 gui=bold,underline ctermfg=196
 hi Typedef      guifg=#804040 gui=bold           ctermfg=95
 hi Type         guifg=#b58900 gui=bold           ctermfg=80
-hi CursorLine   guibg=#ACFFA1 guifg=grey        ctermfg=57    ctermbg=255 cterm=reverse
+hi CursorLine   guibg=#ACFFA1 guifg=#2176C8        ctermfg=57    ctermbg=255 cterm=reverse
 hi VertSplit    guifg=#5e7079 guibg=#5e7079      ctermfg=60
 hi StatusLineNC guifg=#5e7079 ctermfg=60
 hi StatusLine   guifg=#899595 ctermfg=102
@@ -53,7 +53,7 @@ hi SpellBad term=reverse cterm=undercurl,reverse ctermbg=241 gui=undercurl guisp
 
 exec "hi FoldColumn guifg=white  guibg=". default_color
 hi Folded  guifg=blue gui=italic
-""hi Directory guifg=white
+hi Directory guifg=white
 
 syntax match  Comment /\w*.c$/
 

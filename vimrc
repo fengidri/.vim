@@ -7,6 +7,11 @@ for d in lst
     execute "set rtp+=" . d
 endfor
 
+let lst = split(globpath($HOME . "/.vim/wind_plugin", '*/'), '\n')
+for d in lst
+    execute "set rtp+=" . d
+endfor
+
 "set options{{{
 "=================================================================
 "set virtualedit=all
@@ -133,10 +138,18 @@ set <M-j>=j
 set <M-h>=h
 set <M-k>=k
 set <M-l>=l
-map <silent> <M-j> :call WinJump('j')<cr>
-map <silent> <M-h> :call WinJump('h')<cr>
-map <silent> <M-k> :call WinJump('k')<cr>
-map <silent> <M-l> :call WinJump('l')<cr>
+"map <silent> <M-j> :call WinJump('j')<cr>
+"map <silent> <M-h> :call WinJump('h')<cr>
+"map <silent> <M-k> :call WinJump('k')<cr>
+"map <silent> <M-l> :call WinJump('l')<cr>
+map <silent> `j :call WinJump('j')<cr>
+map <silent> `h :call WinJump('h')<cr>
+map <silent> `k :call WinJump('k')<cr>
+map <silent> `l :call WinJump('l')<cr>
+map wj  <C-W>j
+map wk  <C-W>k
+map wh  <C-W>h
+map wl  <C-W>l
 
 noremap <space> <C-f>
 noremap <S-space> <C-b>
@@ -205,9 +218,8 @@ hi MBEVisibleNormal guifg=red
 filetype plugin indent on     " required!
 autocmd BufEnter * highlight  Index ctermfg=green
 autocmd BufLeave * silent! update
-autocmd BufWrite *  let t = getcurpos()|silent! %s/ \+$//|call setpos('.', t)
+autocmd BufWrite *  let t = getcurpos()|silent! %s/[ \t]\+$//|call setpos('.', t)
 
-"
 "
 "syntax
 "hi SpecialKey guibg=white guifg=grey
@@ -235,8 +247,6 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_global_ycm_extra_conf = $HOME . "/.vim/ycm_extra_conf.py"
 let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_key_invoke_completion = '<C-c>'
-"set imactivatekey=C-space
-"now the youcompleteme is still weak for python
 let g:ycm_server_use_vim_stdout = 0
 let g:ycm_filetype_whitelist = { '*': 1}
 let g:ycm_confirm_extra_conf = 0
@@ -255,6 +265,9 @@ let g:ycm_filetype_blacklist = {
       \ 'context'  : 1,
       \ 'frainuiSearch'  : 1,
       \}
+"close this, when inside kernel project
+let g:ycm_show_diagnostics_ui=0
+let g:ycm_enable_diagnostic_highlighting = 0
 "}}}
 
 "syntastic{{{
@@ -294,16 +307,6 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
 
 call matchadd("Ignore", "\r") "隐藏^M"
-
-"config"
-let g:wind_author            = "丁雪峰"
-let g:wind_email             = "fengidri@yeah.net"
-
-let g:wind_wiki_server       = "blog.fengidri.me"
-let g:wind_wiki_index        = "http://%s/store/index.json"
-let g:wind_wiki_chapter      = 'http://%s/store/%s/index.mkiv'
-let g:wind_wiki_api_chapter  = 'http://%s/fwikiapi/chapters/%s'
-let g:wind_wiki_api_chapters = "http://%s/fwikiapi/chapters"
 
 
 "not show table line
@@ -345,8 +348,9 @@ set backspace=indent,eol,start
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 set background=light
+""colorscheme solarized8
+colorscheme fengdark
 
-colorscheme feng
 ""colorscheme gruvbox
 "关闭括号高亮"
 ""NoMatchParen
@@ -371,3 +375,12 @@ hi ColorColumn  term=NONE cterm=NONE ctermfg=6 ctermbg=NONE gui=NONE guifg=NONE 
 "LuciusBlack
 "LuciusDarkHighContrast
 "LuciusBlackLowContrast
+"
+"
+
+
+
+
+"for tenimal goto normal mode"
+tnoremap <Esc> <c-w>N
+

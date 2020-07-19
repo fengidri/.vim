@@ -7,3 +7,5 @@ set softtabstop=8
 set shiftwidth=8
 set preserveindent
 set noexpandtab
+set cinoptions=(0,:0
+set cindent

@@ -473,7 +473,12 @@ unlet s:cpo_save
 "
 "高亮函数名
 syn match cFunt  "[a-zA-Z_][a-zA-Z_0-9]\+\s*(\{1}"ms=s,me=e-1
-hi link cFunt Function	
+syn match LockFunc       "[a-zA-Z_][a-zA-Z_0-9]\+lock\s*(\{1}"ms=s,me=e-1
+
+hi link cFunt Function
+hi link LockFunc Function
+hi hiFunc guibg=#344000 gui=underline
+
 "syn match CCommentDesc "--[^-/*]\+$"    containedin=cComment contained
 "syn match CCommentArg "@\w\+"    containedin=cComment contained
 "hi CCommentDesc  gui=italic guifg=green
