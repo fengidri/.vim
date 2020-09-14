@@ -354,8 +354,6 @@ colorscheme fengdark
 ""colorscheme gruvbox
 "关闭括号高亮"
 ""NoMatchParen
-hi MatchParen term=underline cterm=underline ctermfg=6 ctermbg=NONE gui=underline guifg=NONE guibg=NONE
-hi ColorColumn  term=NONE cterm=NONE ctermfg=6 ctermbg=NONE gui=NONE guifg=NONE guibg=#b9b8ba
 "colorscheme slate
 "colorscheme mime
 "colorscheme shine
@@ -383,4 +381,5 @@ hi ColorColumn  term=NONE cterm=NONE ctermfg=6 ctermbg=NONE gui=NONE guifg=NONE 
 
 "for tenimal goto normal mode"
 tnoremap <Esc> <c-w>N
+set winwidth=85 " this include the line number"
 

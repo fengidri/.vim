@@ -44,7 +44,7 @@ hi PmenuSel     guibg=#97d681 guifg=black
 hi NonText      gui=bold      guifg=grey
 hi Search       guifg=black   guibg=grey         ctermfg=0
 
-hi ColorColumn  guifg=white   guibg=grey         ctermbg=233
+hi ColorColumn  guifg=red   guibg=NONE        ctermbg=233
 hi MatchParen   gui=underline guifg=#ffffff      guibg=#242520
 hi Statement    cterm=bold ctermfg=167 gui=bold guifg=Brown
 hi Visual       term=reverse  cterm=reverse      gui=reverse

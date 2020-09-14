@@ -9,3 +9,4 @@ set preserveindent
 set noexpandtab
 set cinoptions=(0,:0
 set cindent
+set colorcolumn=81

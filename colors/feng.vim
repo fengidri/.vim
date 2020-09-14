@@ -44,13 +44,14 @@ hi PmenuSel     guibg=#97d681 guifg=black
 hi NonText      gui=bold      guifg=grey
 hi Search       guifg=black   guibg=grey         ctermfg=0
 
-hi ColorColumn  guifg=white   guibg=grey         ctermbg=233
+hi ColorColumn  guifg=red   guibg=NONE        ctermbg=233
 hi MatchParen   gui=underline guifg=#ffffff      guibg=#242520
 hi Statement    cterm=bold ctermfg=167 gui=bold guifg=Brown
 hi Visual       term=reverse  cterm=reverse      gui=reverse
 
 hi SpellBad term=reverse cterm=undercurl,reverse ctermbg=241 gui=undercurl guisp=Red
 
+hi MatchParen term=underline cterm=underline ctermfg=6 ctermbg=NONE gui=underline guifg=NONE guibg=NONE
 exec "hi FoldColumn guifg=white  guibg=". default_color
 hi Folded  guifg=blue gui=italic
 ""hi Directory guifg=white
