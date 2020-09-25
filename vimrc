@@ -52,13 +52,13 @@ set mouse=a
 set tabstop=4
 set softtabstop=4
 set sw=4
+set expandtab
 set shellslash
 set grepprg=grep\ -nh\ $*
 set nu
 set fo+=mm
 set laststatus=2
 set autoindent
-set expandtab
 set textwidth=80
 
 "set clipboard =unnamed
