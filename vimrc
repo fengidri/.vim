@@ -233,8 +233,10 @@ let g:Powerline_symbols = 'unicode'
 let Tlist_Enable_Fold_Column = 0
 let g:EasyMotion_leader_key = 'f'
 
-set efm=%Dmake\[%\\d%\\+\]:\ Entering\ directory\ '%f',
+set errorformat=%Dmake\[%\\d%\\+\]:\ Entering\ directory\ '%f',
             \%Dmake\[%\\d%\\+\]:\ Entering\ directory\ `%f',
+            \%Dmake:\ Entering\ directory\ `%f',
+            \%DEntering\ directory\ '%f',
             \%f:%l:%c:%m,
             \%f:%l:%m,
             \%DGrep\ Entering\ directory\ '%f'
@@ -347,7 +349,6 @@ set backspace=indent,eol,start
 
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
-set background=light
 ""colorscheme solarized8
 colorscheme fengdark
 
@@ -381,5 +382,6 @@ colorscheme fengdark
 
 "for tenimal goto normal mode"
 tnoremap <Esc> <c-w>N
-set winwidth=85 " this include the line number"
+""set winwidth=85 " this include the line number"
 
+autocmd Vimresized wincmd =

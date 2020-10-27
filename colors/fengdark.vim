@@ -1,13 +1,15 @@
 " local syntax file - set colors on a per-machine basis:
 " vim: tw=0 ts=4 sw=4
 "
-set background=light
 hi clear
 if exists("syntax_on")
   syntax reset
 endif
 
-let g:colors_name = "feng"
+set background=light
+
+let g:colors_name = "fengdark"
+
 
 let default_color="#cce8cf"
 let t_Co=256
@@ -48,6 +50,7 @@ hi ColorColumn  guifg=red   guibg=NONE        ctermbg=233
 hi MatchParen   gui=underline guifg=#ffffff      guibg=#242520
 hi Statement    cterm=bold ctermfg=167 gui=bold guifg=Brown
 hi Visual       term=reverse  cterm=reverse      gui=reverse
+hi Terminal ctermbg=lightgrey ctermfg=blue guibg=NONE guifg=NONE
 
 hi SpellBad term=reverse cterm=undercurl,reverse ctermbg=241 gui=undercurl guisp=Red
 
