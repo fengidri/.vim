@@ -385,3 +385,4 @@ tnoremap <Esc> <c-w>N
 ""set winwidth=85 " this include the line number"
 
 autocmd Vimresized wincmd =
+set ttimeoutlen=0
