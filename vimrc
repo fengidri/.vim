@@ -218,7 +218,16 @@ hi MBEVisibleNormal guifg=red
 filetype plugin indent on     " required!
 autocmd BufEnter * highlight  Index ctermfg=green
 autocmd BufLeave * silent! update
-autocmd BufWrite *  let t = getcurpos()|silent! %s/[ \t]\+$//|call setpos('.', t)
+
+function LineStrip()
+    if &ft == 'tex'
+        return
+    endif
+    let t = getcurpos()
+    silent! %s/[ \t]\+$//
+    call setpos('.', t)
+endfunction
+autocmd BufWrite * call LineStrip()
 
 "
 "syntax
