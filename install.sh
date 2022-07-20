@@ -10,6 +10,7 @@ cd bundle/
 git clone git@github.com:fengidri/wind
 git clone git@github.com:fengidri/YouCompleteMe
 git clone https://github.com/altercation/vim-colors-solarized
+git clone https://github.com/chrisbra/Colorizer
 
 sudo pip2 install python-ctags
 sudo pip2 install requests

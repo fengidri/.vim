@@ -354,7 +354,9 @@ set showtabline=0
 " https://vi.stackexchange.com/questions/2162/why-doesnt-the-backspace-key-work-in-insert-mode
 set backspace=indent,eol,start
 
-
+noremap == :s/^\s*//<cr>==
+vnoremap == :s/^\s*//<cr>:'<,'>normal ==<cr>
+vnoremap = :s/^\s*//<cr>:'<,'>normal ==<cr>
 
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
