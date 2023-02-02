@@ -1,16 +1,12 @@
 set nocompatible              " be iMproved
 filetype off                  " required!
 
-
 let lst = split(globpath($HOME . "/.vim/bundle", '*/'), '\n')
 for d in lst
     execute "set rtp+=" . d
 endfor
 
-let lst = split(globpath($HOME . "/.vim/wind_plugin", '*/'), '\n')
-for d in lst
-    execute "set rtp+=" . d
-endfor
+execute "source " . $HOME . "/.vim/wind/load.vim"
 
 "set options{{{
 "=================================================================
@@ -81,7 +77,7 @@ set wildignorecase
 set completeopt=menuone
 let ch_syntax_for_h=1
 
-let g:wind_im_wubi=1
+let g:wind_load_exts = 1
 let g:wind_zoom='z'
 set statusline=[%<%t]%0*%h%m%r%=Wubi:%{g:wind_im_wubi}\ BN:%n\ ft:%{&ft}\ %{&fileencoding}\ %{g:wind_zoom}\ %0*\ %-14.(%c%V%)\ %l/%L
 "}}}

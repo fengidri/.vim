@@ -1,7 +1,6 @@
 
-""runtime syntax/tex.vim
+runtime syntax/plaintex.vim
 
-hi link TexError Normal
 
 syn match SpellCap /^.*section.*/
 syn match SpellCap /^.*paragraph.*/
