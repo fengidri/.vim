@@ -1,3 +1,9 @@
+""syn match TabLine /^\\subsubsection.*$/
+
+""syn match PmenuSel '^\\[sub]*section.*$'
+""syn match DiffAdd '\\devicenormative.*$'
+""syn match DiffAdd '\\drivernormative.*$'
+
 ""item`进入context的itemize环境
 ""table`进入context的table环境
 ""typing ...
@@ -197,3 +203,48 @@
 "syn on
 "
 "imap . 。
+"
+"
+"
+"
+fu! StartsWith(longer, shorter) abort
+  return a:longer[0:len(a:shorter)-1] ==# a:shorter
+endfunction
+
+function TexFoldLevel(lnum)
+    if a:lnum == 1
+        return 0
+    endif
+
+    let pline = getline(a:lnum - 1)
+    let line = getline(a:lnum)
+
+    if StartsWith(line, "\\subsection")
+        return 0
+    endif
+
+    if StartsWith(pline, "\\subsection")
+        return 1
+    endif
+
+    if StartsWith(line, "\\subsubsection")
+        return 1
+    endif
+
+    if StartsWith(pline, "\\subsubsection")
+        return 2
+    endif
+
+""    if StartsWith(line, "\\drivernormative")
+""        return "a1"
+""    endif
+""
+""    if StartsWith(line, "\\devicenormative")
+""        return "a1"
+""    endif
+
+    return '='
+endfunction
+
+""set foldexpr=TexFoldLevel(v:lnum)
+""set foldmethod=expr

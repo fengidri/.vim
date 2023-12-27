@@ -1,5 +1,5 @@
 
-runtime syntax/plaintex.vim
+""runtime syntax/plaintex.vim
 
 
 syn match SpellCap /^.*section.*/
